@@ -16,13 +16,17 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASS = "D28i12vY06a";
 
+    //we use singolton design pattern here
+    public static Connection connection;
     public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASS);
+            if(connection==null || connection.isClosed()){
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection= DriverManager.getConnection(URL, USER, PASS);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return connection;
     }
 }

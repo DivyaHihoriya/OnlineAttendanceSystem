@@ -24,12 +24,14 @@ public class UserDao {
             
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                user = new User(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("role")
-                );
+                //we use Builder design pattern here
+                user = new User.Builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .email(rs.getString("email"))
+                        .role(rs.getString("role"))
+                        .build();
+                
             }
         }catch(Exception e){
             e.printStackTrace();

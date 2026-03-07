@@ -15,12 +15,12 @@ public class User {
     private String role;
 
     public User(){}
-
-    public User(int id, String name, String email, String role) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.role = role;
+    //Builder pattern
+    public User(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.email = builder.email;
+        this.role = builder.role;
     }
 
     public int getId(){ 
@@ -35,16 +35,43 @@ public class User {
     public String getRole(){ 
         return role; 
     }
-    public void setId(int id){ 
-        this.id = id; 
-    }
-    public void setName(String name){ 
-        this.name = name; 
-    }
-    public void setEmail(String email){ 
-        this.email = email; 
-    }
-    public void setRole(String role){ 
-        this.role = role; 
+    
+    //we implement builder pattern here
+    public static class Builder {
+
+        private int id;
+        private String name;
+        private String email;
+        private String password;
+        private String role;
+
+        public Builder id(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public Builder role(String role) {
+            this.role = role;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
     }
 }
