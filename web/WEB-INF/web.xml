@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.attendance.controller.LoginServlet</servlet-class>
+        <servlet-class>com.Attendance.Controller.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
