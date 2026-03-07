@@ -31,7 +31,7 @@ public class TeacherServlet extends HttpServlet {
         AttendanceDao dao = new AttendanceDao();
         dao.markAttendance(studentId, subjectId, date, status);
 
-        response.sendRedirect("teacher.jsp");
+        response.sendRedirect("Teacher.jsp");
         
         try (PrintWriter out = response.getWriter()) {
             

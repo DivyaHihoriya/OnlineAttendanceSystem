@@ -39,16 +39,16 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", user);
 
             if(user.getRole().equals("ADMIN")){
-                response.sendRedirect("admin.jsp");
+                response.sendRedirect("Admin.jsp");
             }else if(user.getRole().equals("TEACHER")){
-                response.sendRedirect("teacher.jsp");
+                response.sendRedirect("Teacher.jsp");
             }else{
                 response.sendRedirect("StudentServlet");
             }
 
         }else{
             request.setAttribute("error", "Invalid Credentials");
-            RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
             rd.forward(request, response);
         }
         try (PrintWriter out = response.getWriter()) {

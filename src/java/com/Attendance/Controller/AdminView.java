@@ -33,7 +33,7 @@ public class AdminView extends HttpServlet {
 
         request.setAttribute("attendanceList", list);
 
-        RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
         rd.forward(request, response);
         
         try (PrintWriter out = response.getWriter()) {

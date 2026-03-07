@@ -35,7 +35,7 @@ public class StudentServlet extends HttpServlet {
         List<String> list = dao.getAttendance(user.getId());
 
         request.setAttribute("attendanceList", list);
-        RequestDispatcher rd=request.getRequestDispatcher("student.jsp");
+        RequestDispatcher rd=request.getRequestDispatcher("Student.jsp");
         rd.forward(request, response);
         
         
