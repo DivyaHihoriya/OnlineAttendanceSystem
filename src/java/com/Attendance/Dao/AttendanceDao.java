@@ -54,4 +54,29 @@ public class AttendanceDao {
 
         return list;
     }
+    public List<String> getAllAttendance() {
+
+        List<String> list = new ArrayList<>();
+
+        try (Connection con = DBConnection.getConnection()) {
+
+            String sql = "SELECT * FROM attendance";
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                list.add("Student ID: " + rs.getInt("student_id")
+                        + " Subject ID: " + rs.getInt("subject_id")
+                        + " Date: " + rs.getDate("date")
+                        + " Status: " + rs.getString("status"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+    }
+
+    return list;
+    }
 }

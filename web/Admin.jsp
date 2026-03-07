@@ -40,7 +40,22 @@
                 <button type="submit">Add User</button>
 
             </form>
+            <hr>
 
+            <a href="AdminView">View Attendance</a>
+            <%
+                java.util.List list = (java.util.List) request.getAttribute("attendanceList");
+
+                if (list != null) {
+                    for (Object obj : list) {
+            %>
+
+            <p class="attendance"><%= obj %></p>
+
+            <%
+                    }
+                }
+            %>
         </div>
 
     </body>

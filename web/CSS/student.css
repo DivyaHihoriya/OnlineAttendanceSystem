@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 6 Mar 2026, 10:07:06 pm
+    Created on : 7 Mar 2026, 10:19:43 am
     Author     : DIVYA
 */
 
@@ -29,33 +29,6 @@ h2{
     color:#333;
 }
 
-
-
-input, select{
-    width:100%;
-    padding:10px;
-    margin:8px 0;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
-
-
-button{
-    width:100%;
-    padding:10px;
-    background:#5f8f8c;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover{
-    background:#218838;
-}
-
-
 .logout{
     float:right;
     text-decoration:none;
@@ -69,16 +42,20 @@ button:hover{
     background:#1f4f4c;
 }
 
-
-
 h3{
     margin-top:20px;
     color:#444;
 }
 
-.attendance{
-    background:#e9f7f6;
+.record{
     padding:10px;
-    border-left:5px solid #5f8f8c;
-    margin:6px 0;
+    margin:8px 0;
+    background:#e9f5ff;
+    border-left:5px solid #2196F3;
+    font-size:16px;
+}
+
+.no-record{
+    text-align:center;
+    color:red;
 }
