@@ -32,7 +32,6 @@
 
                 <label>Role</label>
                 <select name="role">
-                <option value="ADMIN">Admin</option>
                 <option value="TEACHER">Teacher</option>
                 <option value="STUDENT">Student</option>
 
@@ -42,7 +41,9 @@
             </form>
             <hr>
 
-            <a href="AdminView">View Attendance</a>
+            <a href="AdminView">
+                <button type="button">View Attendance</button>
+            </a>
             <%
                 java.util.List list = (java.util.List) request.getAttribute("attendanceList");
 

@@ -13,14 +13,15 @@ import java.sql.*;
 
 public class UserDao {
     
-    public User login(String email, String password){
+    public User login(String email, String password,String role){
 
         User user = null;
         try (Connection con = DBConnection.getConnection()){
-            String sql = "SELECT * FROM user WHERE email=? AND password=?";
+            String sql = "SELECT * FROM user WHERE email=? AND password=? AND role=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);
+            ps.setString(3,role);
             
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {

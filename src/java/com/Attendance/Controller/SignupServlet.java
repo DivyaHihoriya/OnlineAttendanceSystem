@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
 
@@ -16,49 +15,35 @@ import jakarta.servlet.http.*;
  *
  * @author DIVYA
  */
-
 import com.Attendance.Dao.UserDao;
-import com.Attendance.Model.User;
+@WebServlet(name = "SignupServlet", urlPatterns = {"/SignupServlet"})
+public class SignupServlet extends HttpServlet {
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
-
-    
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String role = request.getParameter("role");
+
+        String role = "ADMIN";
+
         UserDao dao = new UserDao();
-        User user = dao.login(email, password,role);
 
-        if(user != null){
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+        dao.addUser(name, email, password, role);
 
-            if(role.equals("ADMIN")){
-                response.sendRedirect("Admin.jsp");
-            }else if(role.equals("TEACHER")){
-                response.sendRedirect("Teacher.jsp");
-            }else{
-                response.sendRedirect("StudentServlet");
-            }
+        response.sendRedirect("Login.jsp");
 
-        }else{
-            request.setAttribute("error", "Invalid Credentials");
-            RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
-            rd.forward(request, response);
-        }
         try (PrintWriter out = response.getWriter()) {
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
+            out.println("<title>Servlet SignupServlet</title>");
             out.println("</head>");
             out.println("<body>");
+            
             out.println("</body>");
             out.println("</html>");
         }

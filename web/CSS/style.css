@@ -1,0 +1,156 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 Mar 2026, 4:20:47 pm
+    Author     : DIVYA
+*/
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body Background */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#5f8f8c;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Main Card */
+.container{
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.container h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+/* Labels */
+label{
+    font-weight:600;
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+/* Inputs */
+input, select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+    transition:0.2s;
+}
+
+/* Input Focus */
+input:focus, select:focus{
+    border-color:#6c9a97;
+    outline:none;
+    box-shadow:0 0 4px rgba(108,154,151,0.4);
+}
+
+/* Role Section */
+.role{
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+.role input{
+    width:auto;
+    margin-right:5px;
+}
+
+.role label{
+    display:inline;
+    margin-right:20px;
+    font-weight:500;
+}
+
+/* Buttons */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    border:none;
+    border-radius:6px;
+    background:#6c9a97;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* Button Hover */
+button:hover{
+    background:#4f7f7c;
+}
+
+/* Link Text */
+.text-link{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.text-link a{
+    text-decoration:none;
+    color:#5f8f8c;
+    font-weight:600;
+}
+
+.text-link a:hover{
+    text-decoration:underline;
+}
+
+/* Admin Page */
+.admin-container{
+    width:500px;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Header Row */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+/* Logout Button */
+.logout{
+    background:#e74c3c;
+    padding:8px 14px;
+    border:none;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.logout:hover{
+    background:#c0392b;
+}
+
+/* Divider */
+hr{
+    margin:15px 0;
+    border:0;
+    border-top:1px solid #ddd;
+}
