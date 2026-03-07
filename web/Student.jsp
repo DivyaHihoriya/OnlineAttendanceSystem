@@ -22,20 +22,25 @@
                 java.util.List<String> list = (java.util.List<String>) request.getAttribute("attendanceList");
 
                 if (list != null && !list.isEmpty()) {
+            %>
+            <table class="attendance-table">
+            <tr>
+            <th>Attendance Record</th>
+            </tr>
+            <%
                     for (String record : list) {
             %>
-
-            <div class="record">
-                <%= record %>
-            </div>
-
+            <tr>
+            <td><%= record %></td>
+            </tr>
             <%
                     }
+            %>
+            </table>
+            <%
                 } else {
             %>
-
             <p class="no-record">No attendance records found.</p>
-
             <%
                 }
             %>

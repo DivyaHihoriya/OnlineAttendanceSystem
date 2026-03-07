@@ -45,16 +45,30 @@
                 <button type="button">View Attendance</button>
             </a>
             <%
-                java.util.List list = (java.util.List) request.getAttribute("attendanceList");
+                java.util.List<String> list = (java.util.List<String>) request.getAttribute("attendanceList");
 
-                if (list != null) {
-                    for (Object obj : list) {
+                if (list != null && !list.isEmpty()) {
             %>
-
-            <p class="attendance"><%= obj %></p>
-
+            <table class="attendance-table">
+            <tr>
+            <th>Attendance Record</th>
+            </tr>
+            <%
+                    for (String record : list) {
+            %>
+            <tr>
+            <td><%= record %></td>
+            </tr>
             <%
                     }
+            %>
+            </table>
+            <%
+                } else {
+            %>
+            <p class="no-record">No attendance records found.</p>
+
+            <%
                 }
             %>
         </div>
