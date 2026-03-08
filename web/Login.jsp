@@ -51,9 +51,9 @@
                 
                 
                 <button type="submit">Login</button>
-                <p class="signup-link">
+<!--                <p class="signup-link">
                     Don't have an account? <a href="Signup.jsp">Signup</a>
-                </p>
+                </p>-->
             </form>
 
             <p class="error">${error}</p>
