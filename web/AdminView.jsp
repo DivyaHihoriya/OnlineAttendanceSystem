@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Student
-    Created on : 7 Mar 2026, 10:17:05 am
+    Document   : AdminView
+    Created on : 8 Mar 2026, 8:39:10 pm
     Author     : DIVYA
 --%>
 
@@ -10,21 +10,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Student Attendance</title>
-        <link rel="stylesheet" type="text/css" href="CSS/student.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Admin.css">
+        <title>Admin View</title>
     </head>
     <body>
-        <div class="dashboard-container">
+    <div class="dashboard-container">
         <aside class="sidebar">
-            <h3>Student Portal</h3>
+            <h3>Admin Panel</h3>
             <nav>
                 <ul>
-                    <li><a href="Student.jsp">My Attendance</a></li>
+                    <li><a href="AdminDashboard.jsp">Admin Dashboard</a></li>
+                    <li><a href="Admin.jsp">Add User</a></li>
+                    <li><a href="AdminView.jsp">View Attendance</a></li>
                     <li><a href="LogoutServlet">Logout</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="main-content">
+
             <h1>Your Attendance Summary</h1>
             
             <table>
@@ -52,6 +55,6 @@
                 </tbody>
             </table>
         </main>
-        </div>
+    </div>
     </body>
 </html>

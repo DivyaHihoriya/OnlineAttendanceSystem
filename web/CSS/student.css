@@ -1,64 +1,51 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 7 Mar 2026, 10:19:43 am
-    Author     : DIVYA
-*/
-
-body{
-    font-family: Arial, sans-serif;
-    background: #5f8f8c;
-    margin-top:120px;
-    padding:0;
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --bg-light: #f4f7f6;
+    --sidebar-width: 250px;
 }
 
-.container{
-    width:500px;
-    margin:60px auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
 }
 
-
-h2{
-    text-align:center;
-    color:#333;
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
 }
 
-.logout{
-    float:right;
-    text-decoration:none;
-    color:white;
-    background:#dc3545;
-    padding:6px 10px;
-    border-radius:5px;
+.sidebar {
+    width: 200px;
+    background: var(--primary);
+    color: white;
+    padding: 20px;
 }
 
-.logout:hover{
-    background:#1f4f4c;
+.main-content {
+    flex: 1;
+    padding: 30px;
 }
 
-h3{
-    margin-top:20px;
-    color:#444;
+/* Common Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.record{
-    padding:10px;
-    margin:8px 0;
-    background:#e9f5ff;
-    border-left:5px solid #2196F3;
-    font-size:16px;
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.no-record{
-    text-align:center;
-    color:red;
-}
-
-
+th { background: #eee; }
 

@@ -31,7 +31,7 @@ public class AdminServlet extends HttpServlet {
         UserDao dao = new UserDao();
         dao.addUser(name, email, password, role);
         
-        response.sendRedirect("Admin.jsp");
+        
         
         try (PrintWriter out = response.getWriter()) {
            

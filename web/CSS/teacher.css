@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 */
 
 
-body{
+/*body{
     font-family: Arial, sans-serif;
     background: #5f8f8c;
     margin-top:120px;
@@ -73,10 +73,107 @@ button:hover{
 h3{
     margin-top:20px;
     color:#444;
+}*/
+
+
+
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --bg-light: #f4f7f6;
+    --sidebar-width: 250px;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+}
 
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
 
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+}
 
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
 
+/* Common Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th { background: #eee; }
+.attendance-status {
+    display: flex;
+    gap: 10px;
+}
+.present { color: var(--success); }
+.absent { color: var(--danger); }
+.form-card{
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar ul {
+    list-style-type: none; /* Removes the dots */
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+}
+label{
+    font-weight: 700;
+}
+.dashboard-container form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+button[type="submit"] {
+    background: var(--success);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #219150;
+    transform: translateY(-1px);
+}

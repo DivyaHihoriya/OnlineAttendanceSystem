@@ -11,17 +11,17 @@ package com.Attendance.Dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import com.Attendance.Model.Attendance;
 public class AttendanceDao {
     
-    public void markAttendance(int studentId, int subjectId, String date, String status){
+    public void markAttendance(int studentId, String subjectname, String date, String status){
 
         try (Connection con = DBConnection.getConnection()) {
-            String sql = "INSERT INTO attendance(student_id,subject_id,date,status) VALUES(?,?,?,?)";
+            String sql = "INSERT INTO attendance(student_id,subject_name,date,status) VALUES(?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, studentId);
-            ps.setInt(2, subjectId);
+            ps.setString(2, subjectname);
             ps.setString(3, date);
             ps.setString(4, status);
 
@@ -32,8 +32,8 @@ public class AttendanceDao {
         }
     }
     
-    public List<String> getAttendance(int studentId){
-        List<String> list = new ArrayList<>();
+    public List<Attendance> getAttendance(int studentId){
+        List<Attendance> list = new ArrayList<>();
         try (Connection con = DBConnection.getConnection()) {
 
             String sql = "SELECT * FROM attendance WHERE student_id=?";
@@ -43,9 +43,16 @@ public class AttendanceDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add("Subject ID: " + rs.getInt("subject_id")
-                        + " Date: " + rs.getDate("date")
-                        + " Status: " + rs.getString("status"));
+
+                Attendance att = new Attendance(
+                        rs.getInt("id"),
+                        rs.getInt("student_id"),
+                        rs.getString("subjectname"),
+                        rs.getDate("date"),
+                        rs.getString("status")
+                );
+
+                list.add(att);
             }
 
         }catch(Exception e){
@@ -54,9 +61,9 @@ public class AttendanceDao {
 
         return list;
     }
-    public List<String> getAllAttendance() {
+    public List<Attendance> getAllAttendance() {
 
-        List<String> list = new ArrayList<>();
+        List<Attendance> list = new ArrayList<>();
 
         try (Connection con = DBConnection.getConnection()) {
 
@@ -67,10 +74,15 @@ public class AttendanceDao {
 
             while (rs.next()) {
 
-                list.add("Student ID: " + rs.getInt("student_id")
-                        + " Subject ID: " + rs.getInt("subject_id")
-                        + " Date: " + rs.getDate("date")
-                        + " Status: " + rs.getString("status"));
+                Attendance att = new Attendance(
+                        rs.getInt("id"),
+                        rs.getInt("student_id"),
+                        rs.getString("subjectname"),
+                        rs.getDate("date"),
+                        rs.getString("status")
+                );
+
+                list.add(att);
             }
 
         } catch (Exception e) {

@@ -16,6 +16,9 @@ import jakarta.servlet.http.*;
  * @author DIVYA
  */
 import com.Attendance.Dao.AttendanceDao;
+import com.Attendance.Dao.UserDao;
+import com.Attendance.Model.Student;
+import java.util.*;
 @WebServlet(name = "TeacherServlet", urlPatterns = {"/TeacherServlet"})
 public class TeacherServlet extends HttpServlet {
 
@@ -23,13 +26,25 @@ public class TeacherServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        int studentId = Integer.parseInt(request.getParameter("studentId"));
-        int subjectId = Integer.parseInt(request.getParameter("subjectId"));
-        String date = request.getParameter("date");
-        String status = request.getParameter("status");
+        String date = request.getParameter("attendanceDate");
+        String subject = request.getParameter("subject");
+        
+        UserDao dao=new UserDao();
+        List<Student> students = dao.getAllStudents();
+        
+        AttendanceDao dao1 = new AttendanceDao();
+        
+        for (Student s : students) {
 
-        AttendanceDao dao = new AttendanceDao();
-        dao.markAttendance(studentId, subjectId, date, status);
+                int roll = s.getRollNo();
+
+                String status = request.getParameter("attendance_" + roll);
+                
+                dao1.markAttendance(roll, subject, date, status);
+                
+        }
+        
+        
 
         response.sendRedirect("Teacher.jsp");
         

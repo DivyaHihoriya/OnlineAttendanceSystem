@@ -29,9 +29,9 @@ public class AdminView extends HttpServlet {
         
         AttendanceDao dao = new AttendanceDao();
 
-        List<String> list = dao.getAllAttendance();
+//        List<String> list = dao.getAllAttendance();
 
-        request.setAttribute("attendanceList", list);
+//        request.setAttribute("attendanceList", list);
 
         RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
         rd.forward(request, response);

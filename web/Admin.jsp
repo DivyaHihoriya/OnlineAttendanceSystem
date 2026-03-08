@@ -10,68 +10,64 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Dashboard</title>
-        <link rel="stylesheet" href="CSS/admin.css">
+        <link rel="stylesheet" href="CSS/adminadduser.css">
     </head>
     <body>
-        <div class="container">
-            <h2>Admin Dashboard</h2>
+        
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <h3>Admin Panel</h3>
+                <nav>
+                    <ul>
+                        <li><a href="AdminDashboard.jsp">Admin Dashboard</a></li>
+                        <li><a href="Admin.jsp">Add User</a></li>
+                        <li><a href="AdminView.jsp">View Attendance</a></li>
+                        <li><a href="LogoutServlet">Logout</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main-content">
 
-            <a class="logout" href="LogoutServlet">Logout</a>
-            <h3>Add User</h3>
-            <hr>
-            <form action="AdminServlet" method="post">
+                <div class="form-container">
+                    <h3>Add User</h3>
+                    <form action="AdminServlet" method="post" class="input-group">
+                        <div class="field">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <label>Role</label>
+                            <select name="role">
+                                <option value="TEACHER">Teacher</option>
+                                <option value="STUDENT">Student</option>
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit">Add User</button>
 
-                <label>Name</label>
-                <input type="text" name="name" placeholder="Enter your name" required>
-
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Enter your email" required>
-
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required>
-
-                <label>Role</label>
-                <select name="role">
-                <option value="TEACHER">Teacher</option>
-                <option value="STUDENT">Student</option>
-
-                </select>
-                <button type="submit">Add User</button>
-
-            </form>
-            <hr>
-
-            <a href="AdminView">
-                <button type="button">View Attendance</button>
-            </a>
-            <%
-                java.util.List<String> list = (java.util.List<String>) request.getAttribute("attendanceList");
-
-                if (list != null && !list.isEmpty()) {
-            %>
-            <table class="attendance-table">
-            <tr>
-            <th>Attendance Record</th>
-            </tr>
-            <%
-                    for (String record : list) {
-            %>
-            <tr>
-            <td><%= record %></td>
-            </tr>
-            <%
-                    }
-            %>
-            </table>
-            <%
-                } else {
-            %>
-            <p class="no-record">No attendance records found.</p>
-
-            <%
-                }
-            %>
+                    </form>
+                    
+                </div>
+                
+                
+            </main>
         </div>
+                
+                
+                
+                
+        
 
     </body>
 </html>

@@ -10,7 +10,8 @@ package com.Attendance.Dao;
  */
 import com.Attendance.Model.User;
 import java.sql.*;
-
+import java.util.*;
+import com.Attendance.Model.Student;
 public class UserDao {
     
     public User login(String email, String password,String role){
@@ -40,6 +41,32 @@ public class UserDao {
         return user;
     }
 
+    public List<Student> getAllStudents() {
+
+        List<Student> list = new ArrayList<>();
+
+        try {
+
+            Connection con = DBConnection.getConnection();
+
+            String query = "SELECT * FROM user where role='student'";
+
+            PreparedStatement ps = con.prepareStatement(query);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int roll = rs.getInt("id");
+                String name = rs.getString("name");
+                list.add(new Student(roll, name));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
     public void addUser(String name, String email, String password, String role){
         try (Connection con = DBConnection.getConnection()){
             String sql = "INSERT INTO user(name,email,password,role) VALUES(?,?,?,?)";

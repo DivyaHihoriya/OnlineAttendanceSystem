@@ -19,7 +19,7 @@ import jakarta.servlet.http.*;
 import com.Attendance.Dao.AttendanceDao;
 import com.Attendance.Model.User;
 import java.util.List;
-
+import com.Attendance.Model.Attendance;
 @WebServlet(name = "StudentServlet", urlPatterns = {"/StudentServlet"})
 public class StudentServlet extends HttpServlet {
 
@@ -32,7 +32,7 @@ public class StudentServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
 
         AttendanceDao dao = new AttendanceDao();
-        List<String> list = dao.getAttendance(user.getId());
+        List<Attendance> list = dao.getAttendance(user.getId());
 
         request.setAttribute("attendanceList", list);
         RequestDispatcher rd=request.getRequestDispatcher("Student.jsp");
