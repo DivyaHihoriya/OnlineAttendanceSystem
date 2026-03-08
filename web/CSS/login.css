@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 */
 body{
     font-family: Arial, sans-serif;
-    /*background: #558C89;*/
+    background: #558C89;
     background: #5f8f8c;
     height: 100vh;
     display: flex;
@@ -116,3 +116,5 @@ button:hover{
     margin-top: 10px;
     font-weight: bold;
 }
+
+

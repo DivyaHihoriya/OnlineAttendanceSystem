@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          version="5.0">
-
+    
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.Attendance.Controller.LoginServlet</servlet-class>
