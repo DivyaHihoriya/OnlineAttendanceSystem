@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Attendance System Login</title>
-        <link rel="stylesheet" href="CSS/login.css">
+        <link rel="stylesheet" href="CSS/Login.css">
         <script src="Javascript/script.js"></script>
     </head>
     <body>
