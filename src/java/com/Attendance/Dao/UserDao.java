@@ -49,7 +49,7 @@ public class UserDao {
 
             Connection con = DBConnection.getConnection();
 
-            String query = "SELECT * FROM user where role='student'";
+            String query = "SELECT * FROM user where role='STUDENT'";
 
             PreparedStatement ps = con.prepareStatement(query);
 

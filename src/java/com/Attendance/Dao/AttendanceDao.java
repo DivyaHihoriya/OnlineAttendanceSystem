@@ -17,7 +17,7 @@ public class AttendanceDao {
     public void markAttendance(int studentId, String subjectname, String date, String status){
 
         try (Connection con = DBConnection.getConnection()) {
-            String sql = "INSERT INTO attendance(student_id,subject_name,date,status) VALUES(?,?,?,?)";
+            String sql = "INSERT INTO attendance(student_id,subjectname,date,status) VALUES(?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, studentId);

@@ -19,7 +19,7 @@
             <h3>Student Portal</h3>
             <nav>
                 <ul>
-                    <li><a href="Student.jsp">My Attendance</a></li>
+                    <li><a href="StudentServlet">My Attendance</a></li>
                     <li><a href="LogoutServlet">Logout</a></li>
                 </ul>
             </nav>
@@ -33,7 +33,7 @@
                 </thead>
                 <tbody>
                     <%
-                        List<Attendance> list = (List<Attendance>) request.getAttribute("attendanceList");
+                        List<Attendance> list = (List<Attendance>) request.getAttribute("attendanceListstd");
 
                         if (list != null && !list.isEmpty()) {
                             for (Attendance record : list) {

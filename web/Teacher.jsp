@@ -69,6 +69,9 @@
                     </select>
                 <br><br>
                 <table class="table">
+<!--                    <c:if test="${studentList == null}">
+                        <c:redirect url="TeacherView"/>
+                    </c:if>-->
                     <thead>
                         <tr>
                         <th>Roll No</th>

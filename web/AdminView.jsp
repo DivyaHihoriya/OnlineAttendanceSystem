@@ -4,8 +4,10 @@
     Author     : DIVYA
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, com.Attendance.Model.Attendance" %>
+<%@taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +30,7 @@
         </aside>
         <main class="main-content">
 
-            <h1>Your Attendance Summary</h1>
+            <h1>All Students Attendance Summary</h1>
             
             <table>
                 <thead>

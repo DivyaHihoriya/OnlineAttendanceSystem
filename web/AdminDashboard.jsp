@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="AdminDashboard.jsp">Admin Dashboard</a></li>
                         <li><a href="Admin.jsp">Add User</a></li>
-                        <li><a href="AdminView.jsp">View Attendance</a></li>
+                        <li><a href="AdminView">View Attendance</a></li>
                         <li><a href="LogoutServlet">Logout</a></li>
                     </ul>
                 </nav>

@@ -19,6 +19,7 @@ import java.util.List;
 
 
 import com.Attendance.Dao.AttendanceDao;
+import com.Attendance.Model.Attendance;
 @WebServlet(name = "AdminView", urlPatterns = {"/AdminView"})
 public class AdminView extends HttpServlet {
 
@@ -29,11 +30,11 @@ public class AdminView extends HttpServlet {
         
         AttendanceDao dao = new AttendanceDao();
 
-//        List<String> list = dao.getAllAttendance();
+        List<Attendance> list = dao.getAllAttendance();
 
-//        request.setAttribute("attendanceList", list);
+        request.setAttribute("attendanceList", list);
 
-        RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("AdminView.jsp");
         rd.forward(request, response);
         
         try (PrintWriter out = response.getWriter()) {

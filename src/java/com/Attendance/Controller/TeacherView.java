@@ -9,43 +9,31 @@ import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import jakarta.servlet.*;
+import java.util.List;
 
 /**
  *
  * @author DIVYA
  */
 import com.Attendance.Dao.UserDao;
-import jakarta.servlet.RequestDispatcher;
-@WebServlet(name = "AdminServlet", urlPatterns = {"/AdminServlet"})
-public class AdminServlet extends HttpServlet {
+import com.Attendance.Model.Student;
+@WebServlet(name = "TeacherView", urlPatterns = {"/TeacherView"})
+public class TeacherView extends HttpServlet {
 
-  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String role = request.getParameter("role");
-
         UserDao dao = new UserDao();
-        dao.addUser(name, email, password, role);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
+
+        List<Student> list = dao.getAllStudents();
+
+        request.setAttribute("studentList", list);
+
+        RequestDispatcher rd = request.getRequestDispatcher("Teacher.jsp");
         rd.forward(request, response);
         
-        try (PrintWriter out = response.getWriter()) {
-           
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AdminServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

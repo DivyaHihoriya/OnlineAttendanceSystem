@@ -29,12 +29,16 @@ public class StudentServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         HttpSession session = request.getSession(false);
+        if(session == null || session.getAttribute("user") == null){
+            response.sendRedirect("Login.jsp");
+            return;
+        }
         User user = (User) session.getAttribute("user");
 
         AttendanceDao dao = new AttendanceDao();
         List<Attendance> list = dao.getAttendance(user.getId());
 
-        request.setAttribute("attendanceList", list);
+        request.setAttribute("attendanceListstd", list);
         RequestDispatcher rd=request.getRequestDispatcher("Student.jsp");
         rd.forward(request, response);
         

@@ -46,7 +46,7 @@ public class TeacherServlet extends HttpServlet {
         
         
 
-        response.sendRedirect("Teacher.jsp");
+        response.sendRedirect("TeacherView");
         
         try (PrintWriter out = response.getWriter()) {
             
