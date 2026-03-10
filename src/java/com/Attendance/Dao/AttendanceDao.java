@@ -12,9 +12,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.Attendance.Model.Attendance;
+
 public class AttendanceDao {
-    
-    public void markAttendance(int studentId, String subjectname, String date, String status){
+
+    public void markAttendance(int studentId, String subjectname, String date, String status) {
 
         try (Connection con = DBConnection.getConnection()) {
             String sql = "INSERT INTO attendance(student_id,subject_name,date,status) VALUES(?,?,?,?)";
@@ -27,12 +28,12 @@ public class AttendanceDao {
 
             ps.executeUpdate();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    public List<Attendance> getAttendance(int studentId){
+
+    public List<Attendance> getAttendance(int studentId) {
         List<Attendance> list = new ArrayList<>();
         try (Connection con = DBConnection.getConnection()) {
 
@@ -47,7 +48,7 @@ public class AttendanceDao {
                 Attendance att = new Attendance(
                         rs.getInt("id"),
                         rs.getInt("student_id"),
-                        rs.getString("subjectname"),
+                        rs.getString("subject_name"),
                         rs.getDate("date"),
                         rs.getString("status")
                 );
@@ -55,12 +56,13 @@ public class AttendanceDao {
                 list.add(att);
             }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return list;
     }
+
     public List<Attendance> getAllAttendance() {
 
         List<Attendance> list = new ArrayList<>();
@@ -77,7 +79,7 @@ public class AttendanceDao {
                 Attendance att = new Attendance(
                         rs.getInt("id"),
                         rs.getInt("student_id"),
-                        rs.getString("subjectname"),
+                        rs.getString("subject_name"),
                         rs.getDate("date"),
                         rs.getString("status")
                 );
@@ -87,8 +89,8 @@ public class AttendanceDao {
 
         } catch (Exception e) {
             e.printStackTrace();
-    }
+        }
 
-    return list;
+        return list;
     }
 }

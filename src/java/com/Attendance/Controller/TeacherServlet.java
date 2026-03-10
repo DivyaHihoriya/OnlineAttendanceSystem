@@ -39,8 +39,16 @@ public class TeacherServlet extends HttpServlet {
                 int roll = s.getRollNo();
 
                 String status = request.getParameter("attendance_" + roll);
+                String status1;
+                if("P".equals(status)){
+                    status1="present";
+                }
+                else{
+                    status1="Absent";
+                }
                 
-                dao1.markAttendance(roll, subject, date, status);
+                        
+                dao1.markAttendance(roll, subject, date, status1);
                 
         }
         

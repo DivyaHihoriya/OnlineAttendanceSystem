@@ -41,18 +41,18 @@ public class StudentServlet extends HttpServlet {
         request.setAttribute("attendanceListstd", list);
         RequestDispatcher rd=request.getRequestDispatcher("Student.jsp");
         rd.forward(request, response);
+        return;
         
-        
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet StudentServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+//        try (PrintWriter out = response.getWriter()) {
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet StudentServlet</title>");
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
