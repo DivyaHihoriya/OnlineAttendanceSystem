@@ -19,7 +19,7 @@
             <h3>Student Portal</h3>
             <nav>
                 <ul>
-                    <li><a href="StudentServlet">My Attendance</a></li>
+                    
                     <li><a href="LogoutServlet">Logout</a></li>
                 </ul>
             </nav>
